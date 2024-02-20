@@ -50,14 +50,15 @@ target_compile_features(${ENGINE_PROJECT_NAME} PUBLIC cxx_std_17)
 
 # Добавления саб-модуля glfw
 add_subdirectory(../external/glfw ${CMAKE_CURRENT_BINARY_DIR}/glfw)
-# target_include_directories(${ENGINE_PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../external/glfw/include)
 target_link_libraries(${ENGINE_PROJECT_NAME} PRIVATE glfw)
 
 # Добавления саб-модуля glew
 add_subdirectory(../external/glew ${CMAKE_CURRENT_BINARY_DIR}/glew)
-# add_subdirectory(../external/glew ${CMAKE_CURRENT_SOURCE_DIR}/glew)
-# target_include_directories(${ENGINE_PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../external/glew/include)
 target_link_libraries(${ENGINE_PROJECT_NAME} PRIVATE libglew_static)
 
-add_subdirectory(../external/pnglib ${CMAKE_CURRENT_BINARY_DIR}/pnglib)
-target_link_libraries(${ENGINE_PROJECT_NAME} PRIVATE libpng)
+#add_subdirectory(../external/zlib ${CMAKE_CURRENT_BINARY_DIR}/zlib)
+#target_include_directories(${ENGINE_PROJECT_NAME} PUBLIC external/zlib)
+#target_link_libraries(${ENGINE_PROJECT_NAME} PRIVATE zlib)
+
+#add_subdirectory(../external/libpng ${CMAKE_CURRENT_BINARY_DIR}/libpng)
+#target_link_libraries(${ENGINE_PROJECT_NAME} PRIVATE png)
