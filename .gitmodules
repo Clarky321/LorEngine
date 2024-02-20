@@ -4,3 +4,9 @@
 [submodule "external/glew"]
 	path = external/glew
 	url = https://github.com/Perlmint/glew-cmake.git
+[submodule "external/libpng"]
+	path = external/libpng
+	url = https://github.com/libpng/libpng.git
+[submodule "external/pnglib"]
+	path = external/pnglib
+	url = https://github.com/tamaskenez/libpng-cmake.git

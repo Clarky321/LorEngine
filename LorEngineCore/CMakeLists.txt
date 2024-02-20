@@ -8,12 +8,18 @@ set(ENGINE_PROJECT_NAME LorEngineCore)
 set(ENGINE_PUBLIC_INCLUDES
 	includes/LorEngineCore/Events.hpp
 	includes/LorEngineCore/Window.hpp
+	includes/LorEngineCore/Shader.hpp
+	includes/LorEngineCore/Texture.hpp
+	includes/LorEngineCore/png_loading.hpp
 )
 
 # Определяем список приватных исходных файлов.
 set(ENGINE_PRIVATE_SOURCES
 	src/LorEngineCore/Events.cpp
 	src/LorEngineCore/Window.cpp
+	src/LorEngineCore/Shader.cpp
+	src/LorEngineCore/Texture.cpp
+	src/LorEngineCore/png_loading.cpp
 )
 
 # Объединяем публичные и приватные исходные файлы в один список.
@@ -52,3 +58,6 @@ add_subdirectory(../external/glew ${CMAKE_CURRENT_BINARY_DIR}/glew)
 # add_subdirectory(../external/glew ${CMAKE_CURRENT_SOURCE_DIR}/glew)
 # target_include_directories(${ENGINE_PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../external/glew/include)
 target_link_libraries(${ENGINE_PROJECT_NAME} PRIVATE libglew_static)
+
+add_subdirectory(../external/pnglib ${CMAKE_CURRENT_BINARY_DIR}/pnglib)
+target_link_libraries(${ENGINE_PROJECT_NAME} PRIVATE libpng)
