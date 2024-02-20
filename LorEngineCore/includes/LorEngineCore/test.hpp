@@ -1,4 +1,0 @@
-namespace LorEngine {
-
-	void SayTest();
-}

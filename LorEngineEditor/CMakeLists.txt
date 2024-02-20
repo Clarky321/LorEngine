@@ -11,7 +11,7 @@ add_executable(${EDITOR_PROJECT_NAME}
 )
 
 # Линкуем LorEngineCore с проектом редактора.
-target_link_libraries(${EDITOR_PROJECT_NAME} LorEngineCore)
+target_link_libraries(${EDITOR_PROJECT_NAME} LorEngineCore glfw libglew_static)
 
 # Указываем, что проект использует стандарт C++17.
 target_compile_features(${EDITOR_PROJECT_NAME} PUBLIC cxx_std_17)

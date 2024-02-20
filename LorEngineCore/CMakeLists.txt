@@ -6,12 +6,14 @@ set(ENGINE_PROJECT_NAME LorEngineCore)
 
 # Определяем список публичных заголовочных файлов.
 set(ENGINE_PUBLIC_INCLUDES
-	includes/LorEngineCore/test.hpp
+	includes/LorEngineCore/Events.hpp
+	includes/LorEngineCore/Window.hpp
 )
 
 # Определяем список приватных исходных файлов.
 set(ENGINE_PRIVATE_SOURCES
-	src/LorEngineCore/test.cpp
+	src/LorEngineCore/Events.cpp
+	src/LorEngineCore/Window.cpp
 )
 
 # Объединяем публичные и приватные исходные файлы в один список.
@@ -42,10 +44,11 @@ target_compile_features(${ENGINE_PROJECT_NAME} PUBLIC cxx_std_17)
 
 # Добавления саб-модуля glfw
 add_subdirectory(../external/glfw ${CMAKE_CURRENT_BINARY_DIR}/glfw)
-target_include_directories(${ENGINE_PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../external/glfw/include)
+# target_include_directories(${ENGINE_PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../external/glfw/include)
 target_link_libraries(${ENGINE_PROJECT_NAME} PRIVATE glfw)
 
 # Добавления саб-модуля glew
 add_subdirectory(../external/glew ${CMAKE_CURRENT_BINARY_DIR}/glew)
-target_include_directories(${ENGINE_PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../external/glew/include)
+# add_subdirectory(../external/glew ${CMAKE_CURRENT_SOURCE_DIR}/glew)
+# target_include_directories(${ENGINE_PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../external/glew/include)
 target_link_libraries(${ENGINE_PROJECT_NAME} PRIVATE libglew_static)
