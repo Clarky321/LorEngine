@@ -45,3 +45,7 @@ add_subdirectory(../external/glfw ${CMAKE_CURRENT_BINARY_DIR}/glfw)
 target_include_directories(${ENGINE_PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../external/glfw/include)
 target_link_libraries(${ENGINE_PROJECT_NAME} PRIVATE glfw)
 
+# Добавления саб-модуля glew
+add_subdirectory(../external/glew ${CMAKE_CURRENT_BINARY_DIR}/glew)
+target_include_directories(${ENGINE_PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../external/glew/include)
+target_link_libraries(${ENGINE_PROJECT_NAME} PRIVATE libglew_static)

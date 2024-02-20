@@ -1,5 +1,4 @@
 #include <iostream>
-
 #include "LorEngineCore/test.hpp"
 
 namespace LorEngine {
