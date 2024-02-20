@@ -39,3 +39,9 @@ target_include_directories(${ENGINE_PROJECT_NAME} PRIVATE src)
 
 # Указываем использование стандарта C++17 для библиотеки.
 target_compile_features(${ENGINE_PROJECT_NAME} PUBLIC cxx_std_17)
+
+# Добавления саб-модуля glfw
+add_subdirectory(../external/glfw ${CMAKE_CURRENT_BINARY_DIR}/glfw)
+target_include_directories(${ENGINE_PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../external/glfw/include)
+target_link_libraries(${ENGINE_PROJECT_NAME} PRIVATE glfw)
+
